@@ -1,0 +1,18 @@
+<div class="content">
+	<div class="card-container">
+		<ng-container *ngIf="weatherService.citiesWeather.length">
+			<a class="card" *ngFor="let city of weatherService.citiesWeather" [routerLink]="['/home', city.id]">
+				<div>
+					<h2>{{city.name}}</h2>
+					<span class="image">
+						<img src="../../assets/images.png" alt="">
+					</span>
+				</div>
+				<div class="temp">
+					<p>Min: {{city.main.temp_min | tempereature}} *F</p>
+					<p>Max: {{city.main.temp_max | tempereature}} *F</p>
+				</div>
+			</a>
+		</ng-container>
+	</div>
+</div>
